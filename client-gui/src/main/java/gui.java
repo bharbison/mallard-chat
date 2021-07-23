@@ -11,7 +11,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class gui {
+class Gui {
 
     public static void main(String args[]) {
         try {
@@ -83,17 +83,22 @@ class gui {
             for (String i : chat_hist) ta.append(i + "\n");
             ta.setCaretPosition(ta.getDocument().getLength());
 
+            frame.getRootPane().setDefaultButton(send);
+
             send.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent arg) {
-                    String msg = userName.toUpperCase() + ": " +  tf.getText() + "\n";
-                    chat_hist.add(msg);
-                    ta.append(msg);
+                    if(!tf.getText().equals("")) {
+                        System.out.println(tf.getText());
+                        String msg = userName.toUpperCase() + ": " + tf.getText() + "\n";
+                        chat_hist.add(msg);
+                        ta.append(msg);
 
-                    //update db with new text
-                    try {
-                        Files.write(Paths.get(System.getProperty("user.dir") + "\\chat_history.txt"), msg.getBytes(), StandardOpenOption.APPEND);
-                    }catch (IOException ex) {
-                        System.err.println(ex);
+                        //update db with new text
+                        try {
+                            Files.write(Paths.get(System.getProperty("user.dir") + "\\chat_history.txt"), msg.getBytes(), StandardOpenOption.APPEND);
+                        } catch (IOException ex) {
+                            System.err.println(ex);
+                        }
                     }
                 }
             });
