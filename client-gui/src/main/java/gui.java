@@ -60,11 +60,11 @@ class gui {
 
             JFrame frame = new JFrame("Mallard");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 400);
+            frame.setSize(1000, 800);
 
             JPanel panel = new JPanel();
             JLabel label = new JLabel("Enter Text");
-            final JTextField tf = new JTextField(10);
+            final JTextField tf = new JTextField(60);
             tf.setBackground(new Color( 175,193,191));
             JButton send = new JButton("Send");
             panel.add(label);
@@ -72,6 +72,7 @@ class gui {
             panel.add(send);
 
             final JTextArea ta = new JTextArea();
+            ta.setLineWrap(true);
 
             JScrollPane scroll = new JScrollPane(ta);
 
