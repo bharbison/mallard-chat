@@ -14,7 +14,12 @@ public class MaximizeButton extends JButton {
     private void maximizeListener(){
         this.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg) {
-                frame.setExtendedState(frame.MAXIMIZED_BOTH);
+                if(frame.getExtendedState() == frame.NORMAL) {
+                    frame.setExtendedState(frame.MAXIMIZED_BOTH);
+                }
+                else{
+                    frame.setExtendedState(frame.NORMAL);
+                }
             }
         });
     }
