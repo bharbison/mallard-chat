@@ -61,6 +61,8 @@ public class LoginButton extends JButton {
                 System.err.println(e);
             }
 
+            //need to get session token for ec2 stuff later
+
             return failedAttempt;
     }
 }
