@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginSplash extends JFrame {
-    public LoginSplash(){
+public class LoginWindow extends JFrame {
+    public LoginWindow(){
         this.setUndecorated(true);
         this.setResizable(false);
         this.setBackground(new Color( 0.2f, 0.2f, 0.2f, 0.93f));
@@ -11,6 +11,7 @@ public class LoginSplash extends JFrame {
         this.addMouseListener(dragListener);
         this.addMouseMotionListener(dragListener);
 
+        //set size and when window is opened, opens at center of screen
         this.setSize(360, 150);
         this.setLocationRelativeTo(null);
 

@@ -25,11 +25,10 @@ public class LoginButton extends JButton {
                         System.out.println("error, no password");
                         //should not be hardcoded. replace with db query
                     } else if (userTF.getText().equals("Bob") & passTF.getText().equals("1234")) {
-                        //remember which user logged in
-                        //setCurrentUser("Bob");
-
                         frame.dispose();
-                        ChatWindow chat = new ChatWindow();
+                        //goto main window
+                        //new ChatWindow();
+                        new ChannelSelectWindow();
                     } else {
                         System.out.println("error, invalid credentials");
                     }

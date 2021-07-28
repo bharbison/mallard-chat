@@ -11,7 +11,7 @@ class Gui {
     public static void main(String[] args) {
         NimbusUILook nimbusLook = new NimbusUILook();
 
-        LoginSplash login = new LoginSplash();
+        LoginWindow login = new LoginWindow();
     }
     private static ArrayList<String> getChatHistory() {
         //**************************************
