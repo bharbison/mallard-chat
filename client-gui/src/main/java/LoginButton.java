@@ -29,7 +29,6 @@ public class LoginButton extends JButton {
                         System.out.println("error, no username");
                     } else if (passTF.getText().equals("")) {
                         System.out.println("error, no password");
-                        //should not be hardcoded. replace with db query
                     } else {
                         //try to login as user
                         boolean failedAttempt = login();
@@ -37,7 +36,7 @@ public class LoginButton extends JButton {
                         //if credentials approved, switch to channel view
                         if(!failedAttempt) {
                             frame.dispose();
-                            new ChannelSelectWindow();
+                            new ChannelSelectWindow(userTF.getText());
                         }
                     }
                 }

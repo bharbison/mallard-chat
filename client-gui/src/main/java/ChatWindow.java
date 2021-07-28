@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class ChatWindow extends JFrame {
 
-        public ChatWindow(String channelName){
+        public ChatWindow(String channelName, String userName){
                 //remove default title-bar (because it looks terrible), allow the window to be visible, and set window color
                 this.setUndecorated(true);
                 this.setVisible(true);
@@ -27,7 +27,7 @@ public class ChatWindow extends JFrame {
 
                 //sets up the user text entry area, and send button.
                 //Don't hardcode this
-                SendEntryPanel textEntryPanel = new SendEntryPanel(chatView, scroll.getChatHistory(), "Bob");
+                SendEntryPanel textEntryPanel = new SendEntryPanel(chatView, scroll.getChatHistory(), userName);
                 this.getRootPane().setDefaultButton(textEntryPanel.getSendButton());
 
                 //puts tabs on the left of window, chat view in the center, and user text entry at the bottom.

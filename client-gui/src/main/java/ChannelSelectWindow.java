@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.Color;
 
 public class ChannelSelectWindow extends JFrame {
-    public ChannelSelectWindow(){
+    public ChannelSelectWindow(String userName){
         //remove default title-bar (because it looks terrible), allow the window to be visible, and set window color
         this.setUndecorated(true);
         this.setVisible(true);
@@ -21,6 +21,6 @@ public class ChannelSelectWindow extends JFrame {
         this.addMouseListener(dragListener);
         this.addMouseMotionListener(dragListener);
 
-        this.getContentPane().add(new ScrollableChannelPanel(new ChannelList(this)));
+        this.getContentPane().add(new ScrollableChannelPanel(new ChannelList(this, userName)));
     }
 }

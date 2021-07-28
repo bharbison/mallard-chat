@@ -5,10 +5,12 @@ import java.awt.event.ActionListener;
 
 public class ChannelList extends JPanel {
     JFrame frame;
+    String userName;
     private String[] channelNames;
 
-    public ChannelList(JFrame frame){
+    public ChannelList(JFrame frame, String userName){
         this.frame = frame;
+        this.userName = userName;
         getAllChannels();
 
         this.setLayout(new GridLayout(0,1));
@@ -29,7 +31,7 @@ public class ChannelList extends JPanel {
             public void actionPerformed(ActionEvent arg) {
                 frame.dispose();
                 //goto main window
-                new ChatWindow(((JButton)arg.getSource()).getText());
+                new ChatWindow(((JButton)arg.getSource()).getText(), userName);
             }
         });
     }
