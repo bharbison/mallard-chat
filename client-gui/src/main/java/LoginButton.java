@@ -1,4 +1,3 @@
-import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClient;
 import com.amazonaws.services.cognitoidp.model.*;
@@ -43,9 +42,7 @@ public class LoginButton extends JButton {
             });
     }
     private boolean login(){
-        BasicAWSCredentials credentials = new BasicAWSCredentials("AKIA5AN72NACHEHRS4FP", "nRdwtFGLrUcW4aq4ubVtl7PvUdDhmrCXUNH8avEf");
-
-        AWSCognitoIdentityProviderClient client = new AWSCognitoIdentityProviderClient(credentials).withRegion(Regions.US_EAST_2);
+        AWSCognitoIdentityProviderClient client = new AWSCognitoIdentityProviderClient().withRegion(Regions.US_EAST_2);
 
         HashMap authParams = new HashMap<>();
         authParams.put("USERNAME", this.userTF.getText());
